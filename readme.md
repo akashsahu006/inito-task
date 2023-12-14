@@ -18,12 +18,13 @@
 1. `mkdir:` It is implemented in function - **create_folder**. The os.makedirs("file_name") is used to create new folder. Errors like "file exists" or "no file name given" errors are checked.
 2. `cd:` It is implemented in function - **change_path**. The function os.chdir(path) is used. Use cases like _".." to go to parent directory_, _"~" or "/" to go to root directory_ and absolute path are considered. Errors like "invalid path" are checked.
 3. `ls:` It is implemented in function - **list_directory_contents**. The function os.listdir() is used. The error like invalid commands are checked.
-4. `cat:` It is implemented in function **display_file_contents**. It is implemented using file.read() function. Use cases like **cat filename.txt** and **cat -n filename.txt** (Read file content with line number) is considered. Errors like "file does not exist" are checked.
-5. `touch:` It is implemented in function - **touch**. It uses function open(filename, "x"). Cases like if file already exist is also considered.
-6. `echo:` It is implemented in function - **write_to_file**. It uses function open(filename, "a") to write to file. Use cases like _retaining previous content_ in existing file and _writing into empty file_ is considered.
-7. `mv:` It is implemented in function - **move_file_or_directory**. It uses function shutil.move(source, destination).
-8. `cp:` It is implemented in function - **copy_file_or_directory**. It uses function shutil.copy(source, destination).
-9. `rm:` It is implemented in function - **remove_file_or_directory()**. It uses os.remove() and os.rmdir() functions. Errors like file does not exist are accounted.
+4. `grep:` It is implemented in file **grep**.py. Total four variation are implemented those are:- -n -i -v -c.
+5. `cat:` It is implemented in function **display_file_contents**. It is implemented using file.read() function. Use cases like **cat filename.txt** and **cat -n filename.txt** (Read file content with line number) is considered. Errors like "file does not exist" are checked.
+6. `touch:` It is implemented in function - **touch**. It uses function open(filename, "x"). Cases like if file already exist is also considered.
+7. `echo:` It is implemented in function - **write_to_file**. It uses function open(filename, "a") to write to file. Use cases like _retaining previous content_ in existing file and _writing into empty file_ is considered.
+8. `mv:` It is implemented in function - **move_file_or_directory**. It uses function shutil.move(source, destination).
+9. `cp:` It is implemented in function - **copy_file_or_directory**. It uses function shutil.copy(source, destination).
+10. `rm:` It is implemented in function - **remove_file_or_directory()**. It uses os.remove() and os.rmdir() functions. Errors like file does not exist are accounted.
 
 ## UNIT TESTS
 
