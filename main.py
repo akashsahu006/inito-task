@@ -6,9 +6,6 @@ import function
 status = True
 
 
-# mkdir is implemented here
-
-
 root_path = os.getcwd()
 
 while status:
@@ -49,15 +46,7 @@ while status:
             print("Provide file or directory name to be removed.")
     elif main_command == "cd":
         if len(command_list) > 1:
-            if command_list[1] == "/" or command_list[1] == "~":
-                os.chdir(root_path)
-            else:
-                nested_path_input = command_list[1]
-                nested_path = os.path.join(current_path, nested_path_input)
-                try:
-                    os.chdir(nested_path)
-                except FileNotFoundError:
-                    print("File not found.")
+            function.change_path(command_list[1], root_path, current_path)
     elif main_command == "mv":
         command_split = shlex.split(command)
         source_name = command_list[1]

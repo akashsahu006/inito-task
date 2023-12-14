@@ -51,8 +51,13 @@ def display_file_contents(file_path):
 
 def write_to_file(filename, content):
     try:
-        with open(filename, "a") as file:
-            file.write("\n" + content)
+        with open(filename, "r") as file:
+            file_content = file.read()
+            with open(filename, "a") as file_w:
+                if file_content == "":
+                    file_w.write(content)
+                else:
+                    file_w.write("\n" + content)
 
     except FileNotFoundError:
         print("Error: File not found.")
@@ -96,3 +101,15 @@ def copy_file_or_directory(source, destination):
             print(f"Error: Source '{source}' does not exist.")
     except Exception as e:
         print(f"Error: Unable to copy '{source}' to '{destination}'. {e}")
+
+
+def change_path(destination, root_path, current_path):
+    if destination == "/" or destination == "~":
+        os.chdir(root_path)
+    else:
+        nested_path_input = destination
+        nested_path = os.path.join(current_path, nested_path_input)
+        try:
+            os.chdir(nested_path)
+        except FileNotFoundError:
+            print("File not found.")
