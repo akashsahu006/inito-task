@@ -52,7 +52,76 @@ python main.py
 python test.py
 ```
 
-#Project Description
+# Project Description
+
+## Using the project
+
+1. To create a new directory:
+
+```bash
+mkdir directoryname
+```
+
+2. To change directories use following options:
+
+```bash
+cd directoryname
+cd ~
+cd /
+cd ..
+```
+
+3. To list contents in a directory:
+
+```bash
+ls
+```
+
+4. To search within files: grep "pattern" filename.txt
+
+```bash
+grep -i pattern filename
+grep -c pattern filename
+grep -n pattern filename
+grep -v pattern filename
+```
+
+5. To display the contents of a file:
+
+```bash
+cat filename
+cat -n filename
+```
+
+6. To create a new file:
+
+```bash
+touch filename
+```
+
+7. To write to a file: echo "text" > filename.txt
+
+```bash
+ echo "text" > filename
+```
+
+8. To move or rename a file/directory:
+
+```bash
+mv source target
+```
+
+9. To copy a file or directory: cp source target
+
+```bash
+cp source target
+```
+
+10. To remove a file or directory:
+
+```bash
+rm filename
+```
 
 ## Function for each command
 

@@ -87,10 +87,13 @@ while status:
         function.copy_file_or_directory(source_name, destination_folder)
 
     elif main_command == "grep":
-        option = command_list[1]
-        pattern = command_list[2]
-        filename = command_list[3]
-        grep.grep_function(option, pattern, filename)
+        if len(command_list) == 4:
+            option = command_list[1]
+            pattern = command_list[2]
+            filename = command_list[3]
+            grep.grep_function(option, pattern, filename)
+        else:
+            print("Error: Invalid command.")
     else:
         print("Command not recognized.")
 
