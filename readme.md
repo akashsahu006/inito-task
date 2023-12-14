@@ -10,6 +10,14 @@ Before you begin, ensure you have the following installed:
 - pip for Python package management
 - Access to a terminal or command line interface
 
+### Additional requirement
+
+- Before installing the project, ensure you have setuptools installed, as it is required for the installation process.
+
+```bash
+pip install setuptools
+```
+
 ## Installation
 
 ### 1. Clone the Repository
