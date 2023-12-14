@@ -26,3 +26,5 @@
 7. `test_echo_append:` This test checks if the original content is maintained or lost after execution of echo command.
 8. `test_rm_file:` This test checks if a file is removed or not after execution of rm command.
 9. `test_rm_folder:` This test checks if a directory is removed or not after execution of rm command.
+10. `test_cat:` This test checks if cat command read properly from the file or not.
+11. `test_mv:` This test checks if mv command moves a file to destination folder.

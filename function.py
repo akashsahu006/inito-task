@@ -42,7 +42,8 @@ def display_file_contents(file_path):
         with open(file_path, "r") as file:
             # Read and print the contents of the file
             file_contents = file.read()
-            print(f"Contents of file '{file_path}':\n{file_contents}")
+            print(file_contents)
+            return file_contents
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
     except IOError as e:
@@ -70,7 +71,7 @@ def remove_file_or_directory(path):
             print(f"File '{path}' removed successfully.")
         elif os.path.isdir(path):
             os.rmdir(path)
-            print(f"Directory '{path}' removed successfully (recursively).")
+            print(f"Directory '{path}' removed successfully.")
         else:
             print(f"Error: Path '{path}' does not exist.")
     except Exception as e:
@@ -113,3 +114,14 @@ def change_path(destination, root_path, current_path):
             os.chdir(nested_path)
         except FileNotFoundError:
             print("File not found.")
+
+
+def cat_with_line_numbers(filename):
+    try:
+        with open(filename, "r") as file:
+            lines = file.readlines()
+            for line_number, line in enumerate(lines, start=1):
+                print(f"{line_number}: {line}", end="")
+            print("\n")
+    except FileNotFoundError:
+        print(f"File '{filename}' not found.")

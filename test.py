@@ -134,6 +134,41 @@ class Testing(unittest.TestCase):
             if os.path.exists(filename):
                 os.remove(filename)
 
+    def test_cat(self):
+        filename = "testfile"
+        try:
+            text_content = "Hello dummy text"
+            with open(filename, "w") as test_file:
+                test_file.write(text_content)
+            with open(filename, "r") as test_file:
+                content = test_file.read()
+                self.assertEqual(content, function.display_file_contents(filename))
+        finally:
+            if os.path.exists(filename):
+                os.remove(filename)
+
+    def test_mv(self):
+        current_path = os.getcwd()
+        folder_name = "folder"
+        folder_name_1 = "test_folder"
+        try:
+            os.makedirs(folder_name)
+            os.makedirs(folder_name_1)
+            function.move_file_or_directory(folder_name_1, folder_name)
+
+            nested_path = os.path.join(current_path, folder_name)
+            os.chdir(nested_path)
+            self.assertTrue(os.path.exists(folder_name_1))
+        finally:
+            nested_path = os.path.join(current_path, folder_name)
+            os.chdir(nested_path)
+            if os.path.exists(folder_name_1):
+                os.rmdir(folder_name_1)
+
+            function.change_path("~", current_path, current_path)
+            if os.path.exists(folder_name):
+                os.rmdir(folder_name)
+
 
 if __name__ == "__main__":
     unittest.main()
