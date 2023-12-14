@@ -3,6 +3,7 @@ import shlex
 import shutil
 
 
+# COMMAND mkdir
 def create_folder(path):
     try:
         # Create nested folders
@@ -24,6 +25,7 @@ def touch(filename):
         print(f"Error: File '{filename}' already exists.")
 
 
+# COMMAND ls
 def list_directory_contents(directory="."):
     try:
         # Get the list of files and directories in the specified directory
@@ -37,6 +39,7 @@ def list_directory_contents(directory="."):
         print(f"Error: Directory '{directory}' not found.")
 
 
+# COMMAND cat
 def display_file_contents(file_path):
     try:
         with open(file_path, "r") as file:
@@ -50,6 +53,7 @@ def display_file_contents(file_path):
         print(f"Error: Unable to read file '{file_path}'. {e}")
 
 
+# COMMAND echo
 def write_to_file(filename, content):
     try:
         with open(filename, "r") as file:
@@ -64,6 +68,7 @@ def write_to_file(filename, content):
         print("Error: File not found.")
 
 
+# COMMAND rm
 def remove_file_or_directory(path):
     try:
         if os.path.isfile(path):
@@ -78,6 +83,7 @@ def remove_file_or_directory(path):
         print(f"Error: Unable to remove '{path}'. {e}")
 
 
+# COMMAND mv
 def move_file_or_directory(source, destination):
     try:
         shutil.move(source, destination)
@@ -90,6 +96,7 @@ def move_file_or_directory(source, destination):
         print(f"Error: Unable to move '{source}' to '{destination}'. {e}")
 
 
+##COMMAND cp
 def copy_file_or_directory(source, destination):
     try:
         if os.path.isfile(source):
@@ -104,6 +111,7 @@ def copy_file_or_directory(source, destination):
         print(f"Error: Unable to copy '{source}' to '{destination}'. {e}")
 
 
+# COMMAND cd
 def change_path(destination, root_path, current_path):
     if destination == "/" or destination == "~":
         os.chdir(root_path)
@@ -116,6 +124,7 @@ def change_path(destination, root_path, current_path):
             print("File not found.")
 
 
+# COMMAND cat -n
 def cat_with_line_numbers(filename):
     try:
         with open(filename, "r") as file:

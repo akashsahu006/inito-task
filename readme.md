@@ -1,4 +1,6 @@
-# Assignment Question:In-Memory File System
+# Assignment Submission: In-Memory File System
+
+##Commands
 
 1. `mkdir`: Create a new directory.
 2. `cd`: Changes the current directory. Support navigating to the parent directory using `..`, moving to the root directory using `/`, and navigating to a specified absolute path. Basically anything that you can do in a normal terminal. Since there is no user level implementation, ~ and / should take you to root.
@@ -11,11 +13,19 @@
 9. `cp`: Copy a file or directory to another location. ex - `cp /data/ice_cream/cassata.txt .` **. For current directory **
 10. `rm`: Remove a file or directory.
 
-## Functions
+## Function for each command
 
-1. `ls` : It is implemented in function - create_folder.
+1. `mkdir:` It is implemented in function - **create_folder**. The os.makedirs("file_name") is used to create new folder. Errors like "file exists" or "no file name given" errors are checked.
+2. `cd:` It is implemented in function - **change_path**. The function os.chdir(path) is used. Use cases like _".." to go to parent directory_, _"~" or "/" to go to root directory_ and absolute path are considered. Errors like "invalid path" are checked.
+3. `ls:` It is implemented in function - **list_directory_contents**. The function os.listdir() is used. The error like invalid commands are checked.
+4. `cat:` It is implemented in function **display_file_contents**. It is implemented using file.read() function. Use cases like **cat filename.txt** and **cat -n filename.txt** (Read file content with line number) is considered. Errors like "file does not exist" are checked.
+5. `touch:` It is implemented in function - **touch**. It uses function open(filename, "x"). Cases like if file already exist is also considered.
+6. `echo:` It is implemented in function - **write_to_file**. It uses function open(filename, "a") to write to file. Use cases like _retaining previous content_ in existing file and _writing into empty file_ is considered.
+7. `mv:` It is implemented in function - **move_file_or_directory**. It uses function shutil.move(source, destination).
+8. `cp:` It is implemented in function - **copy_file_or_directory**. It uses function shutil.copy(source, destination).
+9. `rm:` It is implemented in function - **remove_file_or_directory()**. It uses os.remove() and os.rmdir() functions. Errors like file does not exist are accounted.
 
-## Testcases
+## UNIT TESTS
 
 1. `test_mkdir:` This test checks if a new directory gets created or not using mkdir command.
 2. `test_mkdir_file_exists:` This test tries to create an existing directory to check if correct error message is given.

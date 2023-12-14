@@ -78,6 +78,7 @@ while status:
             function.move_file_or_directory(source_name, destination_folder)
         else:
             print("Error: Invalid number of arguments.")
+    # COMMAND cp
     elif main_command == "cp":
         command_split = shlex.split(command)
         source_name = command_list[1]
