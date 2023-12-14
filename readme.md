@@ -1,6 +1,6 @@
 # Assignment Submission: In-Memory File System
 
-##Commands
+## Commands (Question)
 
 1. `mkdir`: Create a new directory.
 2. `cd`: Changes the current directory. Support navigating to the parent directory using `..`, moving to the root directory using `/`, and navigating to a specified absolute path. Basically anything that you can do in a normal terminal. Since there is no user level implementation, ~ and / should take you to root.
@@ -12,6 +12,47 @@
 8. `mv`: Move a file or directory to another location. ex - `mv /data/ice_cream/cassata.txt ./data/boring/ice_cream/mississippimudpie/`
 9. `cp`: Copy a file or directory to another location. ex - `cp /data/ice_cream/cassata.txt .` **. For current directory **
 10. `rm`: Remove a file or directory.
+
+# Setup
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- Python 3.6 or higher
+- pip for Python package management
+- Access to a terminal or command line interface
+
+## Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/akashsahu006/inito-task.git
+cd inito-task
+```
+
+### 2. Install the Package
+
+Navigate to the directory containing setup.py and run the following command to install the package and its dependencies:
+
+```bash
+pip install .
+```
+
+## Running the Project
+
+```bash
+python main.py
+```
+
+## Running Unit tests
+
+```bash
+python test.py
+```
+
+#Project Description
 
 ## Function for each command
 

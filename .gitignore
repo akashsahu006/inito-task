@@ -1,2 +1,4 @@
 __pycache__/
 .vscode/
+your_package_name.egg-info/
+build/
